@@ -165,7 +165,7 @@ def main(args=None):
                     loss_list = []
                     for image_batch, label_batch in generate_batch(test_images, test_labels, batch_size, max_step,
                                                                    shuffle=False):
-                        _, loss_, accuracy_ = sess.run([optimizer, loss, accuracy],
+                        loss_, accuracy_ = sess.run([loss, accuracy],
                                                        feed_dict={inputs: image_batch, labels: label_batch,
                                                                   is_trainging: False, dropout_keep_prob: 1.0})
 
